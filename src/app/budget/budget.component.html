@@ -1,0 +1,22 @@
+<h2> Nouvelle opération</h2>
+<section>
+    <p>
+        <label for="montant">montant</label>
+        <input type="number" id="montant" [(ngModel)]="ope.montant">
+    </p>
+    <p>
+        <label for="description">description</label>
+        <input type="text" [(ngModel)]='ope.description'>
+    </p>
+
+    <button (click)="afficher()">Afficher</button>
+    <button (click)="this.inputShown = !this.inputShown">Ajouter</button>
+
+    <section [hidden]="!inputShown">
+        <h2>Mes opérations</h2>
+        <p>{{ope.montant}}</p>
+        <p>{{ope.description}}</p>
+    </section>
+</section>
+
+<!-- <p>Votre solde : {{solde}}</p> -->
