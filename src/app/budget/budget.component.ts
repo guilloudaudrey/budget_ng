@@ -8,18 +8,17 @@ import {Operation} from './classes/Operation'
 })
 export class BudgetComponent {
 opes = []
+montant:number;
+description:string;
 
-ope: Operation = {
-  id: this.opes.length,
-  date: new Date,
-  description: '',
-  montant: 0
+
+ajouter() {
+  this.opes.push(new Operation(new Date, this.description, this.montant));
+
 }
 
-
-
 afficher(){
-  console.log(this.ope);
+  console.log(this.opes);
 }
 
 }
