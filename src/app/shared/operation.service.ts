@@ -4,31 +4,35 @@ import {Operation} from '../budget/classes/Operation'
 @Injectable()
 
 export class OperationService {
-    solde = 1000;
-    opes = []
-    virmontant:number;
-    virdescription:string;
-    retmontant:number;
-    retdescription:string;
+  solde = 1000;
+    opes = [];
     
+   
+    getSolde():number {
+        let solde = this.solde;
+        for(let ope of this.opes){
+          solde += ope.montant;   
+        }
+        return solde;
+    }
     
-    afficherVirement(operation:Operation) {
+    ajoutVirement(operation:Operation) {
       this.opes.push(operation);
     }
     
-    afficherRetrait(operation:Operation){
+    ajoutRetrait(operation:Operation){
       this.opes.push(operation);
     }
     
     supprimer(index:number){
-      this.opes.splice(index, 1);
+      this.opes.splice(index,1);
     }
     
-    virement(){
-      console.log(this.solde += this.virmontant);
-    }
+    // virement(solde, virmontant){
+    //   console.log(solde += virmontant);
+    // }
     
-    retrait(){
-      console.log(this.solde -= this.retmontant);
-    }
+    // retrait(solde, retmontant){
+    //   console.log(solde -= retmontant);
+    // }
 }

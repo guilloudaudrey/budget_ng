@@ -9,7 +9,7 @@
         <input type="text" [(ngModel)]='virdescription'>
     </p>
 
-    <button (click)="afficherVirement(); virement();">Ajouter</button>
+    <button (click)="ajoutVir(); getSolde();">Ajouter</button>
 </section>
 <section>
     <h2>Nouveau retrait</h2>
@@ -21,7 +21,7 @@
         <label for="description">description</label>
         <input type="text" [(ngModel)]='retdescription'>
     </p>
-    <button (click)="afficherRetrait(); retrait();">Retrait</button>
+    <button (click)="ajoutRetr(); getSolde()">Retrait</button>
 </section>
 
 
@@ -35,7 +35,7 @@
     <ul>
         <li *ngFor="let item of opes; index as clef">
             {{'description : ' + item.description + ' ' + 'montant : ' +item.montant + ' date : ' + item.date }}
-            <button (click)="supprimer(clef)">Supprimer</button>
+            <button (click)="supp(clef)">Supprimer</button>
             <button>Modifier</button>
         </li>
 
