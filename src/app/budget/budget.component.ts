@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import {Operation} from './classes/Operation';
+import { Operation } from './classes/Operation';
+import { Depot } from './classes/Depot'
+import { Retrait } from './classes/Retrait'
 import { OperationService } from '../shared/operation.service';
-
-
 
 @Component({
   selector: 'budget-template',
@@ -11,15 +11,16 @@ import { OperationService } from '../shared/operation.service';
 })
 export class BudgetComponent {
 solde = 1000;
-opes = [];
+depots;
+retraits;
 virmontant:number;
 virdescription:string;
 retmontant:number;
 retdescription:string;
 
 constructor(private operationService:OperationService){
-  this.opes = this.operationService.opes;
-
+  this.depots = this.operationService.depots;
+this.retraits = this.operationService.retraits;
   }
 
 ngOnInit() {
@@ -27,25 +28,19 @@ ngOnInit() {
   }
 
 
-ajoutVir() {
-  this.operationService.ajoutVirement(new Operation(new Date, this.virdescription, this.virmontant));
+ajoutDep() {
+  this.operationService.ajoutDepot(new Depot(new Date, this.virdescription, this.virmontant));
 }
 
 ajoutRetr(){
-  this.operationService.ajoutRetrait(new Operation(new Date, this.retdescription, this.retmontant));
+  this.operationService.ajoutRetrait(new Retrait(new Date, this.retdescription, this.retmontant));
 }
 
 supp(index:number){
   this.operationService.supprimer(index);
 }
 
-// vir(){
-//   this.operationService.virement(this.solde, this.retmontant);
-// }
 
-// retr(){
-//   this.operationService.retrait(this.solde, this.retmontant);
-// }
 
 getSolde(){
   this.solde = this.operationService.getSolde();

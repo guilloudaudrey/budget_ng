@@ -5,34 +5,33 @@ import {Operation} from '../budget/classes/Operation'
 
 export class OperationService {
   solde = 1000;
-    opes = [];
+    depots = [];
+    retraits = [];
     
    
     getSolde():number {
         let solde = this.solde;
-        for(let ope of this.opes){
+        for(let ope of this.depots){
           solde += ope.montant;   
+        }
+        for (let ope of this.retraits){
+          solde -= ope.montant;
         }
         return solde;
     }
-    
-    ajoutVirement(operation:Operation) {
-      this.opes.push(operation);
+ 
+    ajoutDepot(operation:Operation) {
+      this.depots.push(operation);
     }
     
     ajoutRetrait(operation:Operation){
-      this.opes.push(operation);
+      this.retraits.push(operation);
     }
     
     supprimer(index:number){
-      this.opes.splice(index,1);
+      this.depots.splice(index,1);
+    
     }
     
-    // virement(solde, virmontant){
-    //   console.log(solde += virmontant);
-    // }
-    
-    // retrait(solde, retmontant){
-    //   console.log(solde -= retmontant);
-    // }
+
 }
