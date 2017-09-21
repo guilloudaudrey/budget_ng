@@ -1,1 +1,7 @@
-<budget-template></budget-template>
+<h1>Mon compte</h1>
+<select [(ngModel)]="selectedPage">
+    <option value="operations">Mes opérations</option>
+    <option value="graphiques">Graphiques</option>
+    <option value="pourcentages">Pourcentages</option>
+</select>
+<budget-template *ngIf="selectedPage === 'operations'"></budget-template>

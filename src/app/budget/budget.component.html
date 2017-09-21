@@ -1,25 +1,43 @@
-<h2>Mes opérations</h2>
 <section>
-    <ul>
-        <li *ngFor="let item of opes">{{'description : ' + item.description + ' ' + 'montant : ' +item.montant + ' date : ' + item.date }}</li>
-    </ul>
-</section>
-<h2> Nouvelle opération</h2>
-<section>
+    <h2> Nouveau virement</h2>
     <p>
         <label for="montant">montant</label>
-        <input type="number" [(ngModel)]="montant">
+        <input type="number" [(ngModel)]="virmontant">
     </p>
     <p>
         <label for="description">description</label>
-        <input type="text" [(ngModel)]='description'>
+        <input type="text" [(ngModel)]='virdescription'>
     </p>
 
-    <button (click)="afficher()">Afficher</button>
-    <button (click)="ajouter()">Ajouter</button>
-
-
-
+    <button (click)="afficherVirement(); virement();">Ajouter</button>
+</section>
+<section>
+    <h2>Nouveau retrait</h2>
+    <p>
+        <label for="montant">montant</label>
+        <input type="number" [(ngModel)]="retmontant">
+    </p>
+    <p>
+        <label for="description">description</label>
+        <input type="text" [(ngModel)]='retdescription'>
+    </p>
+    <button (click)="afficherRetrait(); retrait();">Retrait</button>
 </section>
 
-<!-- <p>Votre solde : {{solde}}</p> -->
+
+<section>
+    <h2>Mon solde</h2>
+    <p> {{solde}} €</p>
+</section>
+
+<section>
+    <h2>Mes opérations</h2>
+    <ul>
+        <li *ngFor="let item of opes; index as clef">
+            {{'description : ' + item.description + ' ' + 'montant : ' +item.montant + ' date : ' + item.date }}
+            <button (click)="supprimer(clef)">Supprimer</button>
+            <button>Modifier</button>
+        </li>
+
+    </ul>
+</section>
