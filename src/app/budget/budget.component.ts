@@ -36,8 +36,12 @@ ajoutRetr(){
   this.operationService.ajoutRetrait(new Retrait(new Date, this.retdescription, this.retmontant));
 }
 
-supp(index:number){
-  this.operationService.supprimer(index);
+suppDep(index:number){
+  this.operationService.supprimerDepot(index);
+}
+
+suppRetr(index:number){
+  this.operationService.supprimerRetrait(index);
 }
 
 

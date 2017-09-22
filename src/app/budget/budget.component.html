@@ -35,7 +35,7 @@
     <ul>
         <li *ngFor="let item of depots; index as clef">
             {{'description : ' + item.description + ' ' + 'montant : ' +item.montant + ' date : ' + item.date }}
-            <button (click)="supp(clef)">Supprimer</button>
+            <button (click)="suppDep(clef)">Supprimer</button>
             <button>Modifier</button>
         </li>
 
@@ -48,7 +48,7 @@
     <ul>
         <li *ngFor="let item of retraits; index as clef">
             {{'description : ' + item.description + ' ' + 'montant : ' +item.montant + ' date : ' + item.date }}
-            <button (click)="supp(clef)">Supprimer</button>
+            <button (click)="suppRetr(clef)">Supprimer</button>
             <button>Modifier</button>
         </li>
 

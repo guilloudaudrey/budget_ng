@@ -4,6 +4,7 @@ import {FormsModule} from '@angular/forms'
 import { AppComponent } from './app.component';
 import { BudgetComponent } from './budget/budget.component';
 import { OperationService } from './shared/operation.service';
+import { OperationAjaxService } from './shared/operation-ajax.service';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,10 @@ import { OperationService } from './shared/operation.service';
     BrowserModule,
     FormsModule, 
   ],
-  providers: [OperationService],
+  providers: [
+    OperationService,
+    OperationAjaxService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
