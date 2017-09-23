@@ -9,9 +9,9 @@
         <input type="text" [(ngModel)]='virdescription'>
     </p>
 
-    <button (click)="ajoutDep(); getSolde();">Ajouter</button>
+    <button (click)="addOpe(); getSolde();">Ajouter</button>
 </section>
-<section>
+<!-- <section>
     <h2>Nouveau retrait</h2>
     <p>
         <label for="montant">montant</label>
@@ -22,7 +22,7 @@
         <input type="text" [(ngModel)]='retdescription'>
     </p>
     <button (click)="ajoutRetr(); getSolde()">Retrait</button>
-</section>
+</section> -->
 
 
 <section>
@@ -31,24 +31,11 @@
 </section>
 
 <section>
-    <h2>Mes dépôts</h2>
+    <h2>Mes opérations</h2>
     <ul>
-        <li *ngFor="let item of depots; index as clef">
+        <li *ngFor="let item of opes; index as clef">
             {{'description : ' + item.description + ' ' + 'montant : ' +item.montant + ' date : ' + item.date }}
-            <button (click)="supp(clef)">Supprimer</button>
-            <button>Modifier</button>
-        </li>
-
-    </ul>
-
-</section>
-
-<section>
-    <h2>Mes retraits</h2>
-    <ul>
-        <li *ngFor="let item of retraits; index as clef">
-            {{'description : ' + item.description + ' ' + 'montant : ' +item.montant + ' date : ' + item.date }}
-            <button (click)="supp(clef)">Supprimer</button>
+            <button (click)="removeOpe(item.id)">Supprimer</button>
             <button>Modifier</button>
         </li>
 
