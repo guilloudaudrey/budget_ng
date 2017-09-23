@@ -4,11 +4,11 @@ export class Retrait{
     description:string;
     montant:number;
 
-    constructor(date:Date, description:string, retrait:number, id?:number){
+    constructor(date:Date, description:string, montant:number, id?:number){
         this.id = id;
         this.date = date;
         this.description = description;
-        this.montant = retrait;
+        this.montant = montant;
     }
 
 }

@@ -1,7 +1,7 @@
 {
     "operation": [{
         "id": 1,
-
+        "date": "2016-10-09",
         "description": "blabla",
         "montant": 2
     }]

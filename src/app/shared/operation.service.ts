@@ -28,14 +28,10 @@ export class OperationService {
       this.retraits.push(operation);
     }
     
-    supprimerDepot(index:number){
+    supprimer(index:number){
       this.depots.splice(index,1);
+    
     }
-
-    supprimerRetrait(index:number){
-      this.retraits.splice(index,1);
-    }
-
     
 
 }

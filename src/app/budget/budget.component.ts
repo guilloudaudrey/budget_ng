@@ -3,6 +3,7 @@ import { Operation } from './classes/Operation';
 import { Depot } from './classes/Depot'
 import { Retrait } from './classes/Retrait'
 import { OperationService } from '../shared/operation.service';
+import { OperationAjaxService } from '../shared/operation-ajax.service';
 
 @Component({
   selector: 'budget-template',
@@ -18,14 +19,7 @@ virdescription:string;
 retmontant:number;
 retdescription:string;
 
-constructor(private operationService:OperationService){
-  this.depots = this.operationService.depots;
-this.retraits = this.operationService.retraits;
-  }
 
-ngOnInit() {
-
-  }
 
 
 ajoutDep() {
@@ -36,12 +30,8 @@ ajoutRetr(){
   this.operationService.ajoutRetrait(new Retrait(new Date, this.retdescription, this.retmontant));
 }
 
-suppDep(index:number){
-  this.operationService.supprimerDepot(index);
-}
-
-suppRetr(index:number){
-  this.operationService.supprimerRetrait(index);
+supp(index:number){
+  this.operationService.supprimer(index);
 }
 
 
@@ -51,4 +41,12 @@ getSolde(){
 
 }
 
+constructor(private operationService:OperationService, private operationAjaxService:OperationAjaxService){
+  this.depots = this.operationService.depots;
+this.retraits = this.operationService.retraits;
+  }
+
+ngOnInit() {
+  this.operationAjaxService.getAllRetraits().then((todos) => this.retraits = <Object[]>todos);
+  }
 }

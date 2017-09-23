@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { BudgetComponent } from './budget/budget.component';
 import { OperationService } from './shared/operation.service';
 import { OperationAjaxService } from './shared/operation-ajax.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { OperationAjaxService } from './shared/operation-ajax.service';
   imports: [
     BrowserModule,
     FormsModule, 
+    HttpClientModule
   ],
   providers: [
     OperationService,
