@@ -9,9 +9,9 @@
         <input type="text" [(ngModel)]='virdescription'>
     </p>
 
-    <button (click)="addOpe(); getSolde();">Ajouter</button>
+    <button (click)="addOpe(virmontant, virdescription); getSolde();">Ajouter</button>
 </section>
-<!-- <section>
+<section>
     <h2>Nouveau retrait</h2>
     <p>
         <label for="montant">montant</label>
@@ -21,8 +21,8 @@
         <label for="description">description</label>
         <input type="text" [(ngModel)]='retdescription'>
     </p>
-    <button (click)="ajoutRetr(); getSolde()">Retrait</button>
-</section> -->
+    <button (click)="addOpe((retmontant* -1), retdescription); getSolde()">Retrait</button>
+</section>
 
 
 <section>
