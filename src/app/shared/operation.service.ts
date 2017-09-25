@@ -1,17 +1,19 @@
 import { Injectable } from "@angular/core";
-import {Operation} from '../budget/classes/Operation'
+import {Operation} from '../shared/Operation'
 import { OperationAjaxService } from "./operation-ajax.service";
 import { HttpClient } from "@angular/common/http";
 
 @Injectable()
 
 export class OperationService {
-  solde = 1000;
+  solde = 1500;
   sum = 0;
   opes = [];
   
-    
-  constructor(private operationAjaxService:OperationAjaxService){}
+    returnSolde(){
+      return this.solde;
+    }
+  
 
     getSolde(solde, opes, sum) {   
        

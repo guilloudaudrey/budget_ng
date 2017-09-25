@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Operation } from './classes/Operation';
+import { Component, OnInit } from '@angular/core';
+import { Operation } from '../shared/Operation';
 import { OperationService } from '../shared/operation.service';
 import { OperationAjaxService } from '../shared/operation-ajax.service';
 
@@ -8,7 +8,7 @@ import { OperationAjaxService } from '../shared/operation-ajax.service';
   templateUrl: './budget.component.html',
 //   styleUrls: ['./app.component.css']
 })
-export class BudgetComponent {
+export class BudgetComponent implements OnInit {
 solde = 1000;
 sum = 0;
 opes;
@@ -20,14 +20,14 @@ retdescription:string;
 
 constructor(private operationService:OperationService, private operationAjaxService:OperationAjaxService){}
 
-ngOnChange(){
-  
-}
+
 
 ngOnInit() {
   this.operationAjaxService.getAllOpes().then((operations) => this.opes = <Object[]>operations);
+  }
 
-   
+  ngDoCheck(){
+    this.solde = this.operationService.getSolde(this.solde, this.opes, this.sum);
   }
 
   addOpe(montant, description){

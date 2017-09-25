@@ -7,10 +7,12 @@ import { OperationService } from './shared/operation.service';
 import { OperationAjaxService } from './shared/operation-ajax.service';
 import { HttpClientModule } from '@angular/common/http';
 
+
 @NgModule({
   declarations: [
     AppComponent,
-    BudgetComponent
+    BudgetComponent,
+   
   ],
   imports: [
     BrowserModule,
