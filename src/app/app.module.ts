@@ -6,12 +6,14 @@ import { BudgetComponent } from './budget/budget.component';
 import { OperationService } from './shared/operation.service';
 import { OperationAjaxService } from './shared/operation-ajax.service';
 import { HttpClientModule } from '@angular/common/http';
+import { GraphComponent } from './graph/graph.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     BudgetComponent,
+    GraphComponent,
    
   ],
   imports: [
