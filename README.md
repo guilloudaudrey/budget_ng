@@ -26,3 +26,11 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+Fonctionnalités imposées :
+  - Une page qui liste les entrées et sorties sur laquelle on pourra ajouter/modifier/supprimer les éléments (un élément aura grosso modo un id, une date, une description, un montant)
+  - Une page qui affiche sous forme de graphique l'évolution de notre solde au fil des mois (exemple : solde de Janvier 400€ - solde de Février 300€ etc.)
+
+ Puis dans un second temps :
+  - Rajouter des catégories à nos entrées/sorties d'argent (loyer, salaire, loisir...)
+  - Faire une page qui affiche sous forme de graphique les entrées/sortie pour chaque mois par catégorie (en pourcentage par exemple)
